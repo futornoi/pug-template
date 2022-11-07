@@ -14,7 +14,7 @@ const runCommand = command => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/futornoi/pug-template ${repoName}`;
-const installDepthCommand = `cd ${repoName} && yarn`
+const installDepthCommand = `cd ${repoName} && npm install`
 
 console.log(`Cloning the repository with name ${repoName}`)
 const checkedOut = runCommand(gitCheckoutCommand)
@@ -25,4 +25,4 @@ const installedDeps = runCommand(installDepthCommand)
 if(!installedDeps) process.exit(-1)
 
 console.log('Congratulations! You are ready. Follow the following commands to start')
-console.log(`cd ${repoName} && yarn start`)
+console.log(`cd ${repoName} && npm start`)
