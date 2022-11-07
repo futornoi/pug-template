@@ -1,0 +1,14 @@
+extends ../layouts/layout
+
+include ../helpers/_mixins
+
+block vars
+  - var title = 'Main'
+  - var page = 'main'
+
+block content
+  include ../sections/header
+
+  main main
+
+  include ../sections/footer

@@ -1,0 +1,5 @@
+mixin link(href, name)
+  a(href=href)&attributes(attributes)= name
+
+mixin image(name, alt)
+  img(src=require(`../../assets/images/${name}`), alt=alt)&attributes(attributes)
