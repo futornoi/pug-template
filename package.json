@@ -1,6 +1,6 @@
 {
-  "name": "@futornoi/pug-template",
-  "version": "1.1.4",
+  "name": "futornoi-pug-starter",
+  "version": "1.0.1",
   "description": "Quick start with pug/scss",
   "main": "index.js",
   "scripts": {
