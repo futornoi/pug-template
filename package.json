@@ -40,5 +40,5 @@
     "> 1%",
     "IE 10"
   ],
-  "bin": "./bin/cli.js"
+  "bin": "./bin/cli/js"
 }
