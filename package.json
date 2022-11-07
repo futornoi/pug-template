@@ -1,5 +1,5 @@
 {
-  "name": "pug-template",
+  "name": "@futornoi/pug-template",
   "version": "1.0.0",
   "description": "Quick start with pug/scss",
   "main": "index.js",
@@ -39,5 +39,6 @@
     "last 1 version",
     "> 1%",
     "IE 10"
-  ]
+  ],
+  "bin": "./bin/cli.js"
 }
