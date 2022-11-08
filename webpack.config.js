@@ -1,30 +1,26 @@
-const CssPlugin = require('./webpack/Css')
-const CopyPlugin = require('./webpack/Copy');
-const PugPages = require('./webpack/Html')
+const CssPlugin = require('./webpack/CssPlugin')
+const CopyPlugin = require('./webpack/CopyPlugin')
+const PugPagesPlugin = require('./webpack/HtmlPlugin')
+const LiveReloadPlugin = require('./webpack/LiveReloadPlugin')
 const BabelLoader = require('./webpack/BabelLoader')
 const SassLoader = require('./webpack/SassLoader')
-const LiveReload = require('./webpack/LiveReload')
+const ImageMinimizer = require('./webpack/ImageMinimizer')
 
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
 
 module.exports = {
   mode,
-  devtool: "source-map",
+  devtool: 'source-map',
   entry: ['./src/js/app.js', './src/scss/style.scss'],
   devServer: {
     port: 3000,
   },
   output: {
-    filename: "js/[name].[contenthash].js",
-    assetModuleFilename: "assets/images/[hash][ext][query]",
-    clean: true
+    filename: 'js/[name].[contenthash].js',
+    assetModuleFilename: 'assets/images/[hash][ext][query]',
+    clean: true,
   },
-  plugins: [
-    CssPlugin(),
-    CopyPlugin(),
-    LiveReload(),
-    ...PugPages(),
-  ],
+  plugins: [CssPlugin(), CopyPlugin(), LiveReloadPlugin(), ...PugPagesPlugin()],
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
@@ -32,10 +28,11 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
+          chunks: 'all',
+        },
+      },
+    },
+    minimizer: [ImageMinimizer()],
   },
   module: {
     rules: [
@@ -49,10 +46,10 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        use:  ['pug-loader']
+        use: ['pug-loader'],
       },
       BabelLoader,
       SassLoader,
-    ]
-  }
+    ],
+  },
 }
