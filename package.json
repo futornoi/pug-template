@@ -4,9 +4,10 @@
   "description": "Quick start with pug/scss",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=developmen webpack serve",
-    "dev": "cross-env NODE_ENV=developmen webpack",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "cross-env NODE_ENV=development webpack serve",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack",
+    "format": "prettier --write ."
   },
   "author": "Maksim Futornoi",
   "license": "ISC",
@@ -14,7 +15,7 @@
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
-    "copy-webpack-plugin": "^11.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "glob": "^8.0.3",
@@ -37,8 +38,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1",
-    "webpack-livereload-plugin": "^3.0.2"
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {},
   "browserslist": [

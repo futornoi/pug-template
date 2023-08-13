@@ -1,6 +1,4 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-console.log(process.env.NODE_ENV)
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   test: /\.(sa|sc|c)ss$/,
@@ -8,20 +6,20 @@ module.exports = {
     process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
     'css-loader',
     {
-      loader: "postcss-loader",
+      loader: 'postcss-loader',
       options: {
         postcssOptions: {
           plugins: [
             [
-              "postcss-preset-env",
+              'postcss-preset-env',
               {
                 browsers: 'last 2 versions',
               },
             ],
           ],
         },
-      }
+      },
     },
-    'sass-loader'
-  ]
+    'sass-loader',
+  ],
 }
