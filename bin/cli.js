@@ -14,7 +14,7 @@ const runCommand = command => {
 
 const repoName = process.argv[2]
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/futornoi/pug-template ${repoName}`
-const installDepthCommand = `cd ${repoName} && npm install`
+const installDepthCommand = `cd ${repoName} && npm install --prefer-offline --no-audit`
 
 console.log(`Cloning the repository with name ${repoName}`)
 const checkedOut = runCommand(gitCheckoutCommand)
