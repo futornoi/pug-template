@@ -1,6 +1,6 @@
 {
   "name": "futornoi-pug-starter",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Quick start with pug/scss",
   "main": "index.js",
   "scripts": {
